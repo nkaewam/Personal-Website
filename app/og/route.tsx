@@ -5,7 +5,7 @@ export const runtime = "edge";
 export async function GET() {
   const getFont = async () => {
     const response = await fetch(
-      new URL("../../../public/font/Boska-Medium.ttf", import.meta.url)
+      new URL("../../public/font/Boska-Medium.ttf", import.meta.url)
     );
     const interSemiBold = await response.arrayBuffer();
 
