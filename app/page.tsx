@@ -1,7 +1,6 @@
 import AssociatedCompanies from "@/components/associated-companies";
 import Description from "@/components/description";
 import FeaturedItem from "@/components/featured-item";
-import FeaturedItemSkeleton from "@/components/featured-item/skeleton";
 import Links from "@/components/links";
 import Name from "@/components/name";
 import { Button } from "@/components/ui/button";
@@ -22,15 +21,25 @@ export default function Home() {
             <Description />
             <AssociatedCompanies />
           </div>
-          <Suspense fallback={<FeaturedItemSkeleton />}>
+          <Suspense fallback={<FeaturedItem.Skeleton />}>
             <FeaturedItem />
           </Suspense>
         </div>
-        <Link href="mailto:work@nkaewam.dev">
-          <Button className="mt-10 p-4 md:p-6 md:text-base md:mt-0">
-            Contact Me
-          </Button>
-        </Link>
+        <div className="flex gap-2">
+          <Link href="mailto:work@nkaewam.dev">
+            <Button className="mt-10 p-4 md:p-6 md:text-base md:mt-0">
+              Contact Me
+            </Button>
+          </Link>
+          <Link href="https://cv.nkaewam.dev" target="_blank">
+            <Button
+              variant="ghost"
+              className="mt-10 w-30 p-4 md:p-6 md:text-base md:mt-0"
+            >
+              CV
+            </Button>
+          </Link>
+        </div>
       </section>
       <section className="w-full h-[720px] bg-gray-400 md:flex-grow md:h-full md:w-auto">
         <div className="relative w-full h-full">

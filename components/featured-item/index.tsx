@@ -3,6 +3,7 @@ import { mediumData, awsData } from "@/constants/marquee-data";
 import Marquee from "react-fast-marquee";
 import Item from "./item";
 import { getGithubFeaturedItems } from "@/lib/github";
+import { Skeleton } from "../ui/skeleton";
 
 const FeaturedItem = async () => {
   const data = await getGithubFeaturedItems();
@@ -51,5 +52,24 @@ const FeaturedItem = async () => {
     </div>
   );
 };
+
+FeaturedItem.Skeleton = (() => {
+  return (
+    <div className="space-y-8">
+      {Array.from({ length: 2 }).map((_, ix) => (
+        <div key={`skeleton-${ix}`} className="flex space-x-4 md:space-x-8">
+          {Array.from({ length: 3 }).map((_, iy) => (
+            <Skeleton
+              key={`skeleton-${ix}-item-${iy}`}
+              className="w-full h-20 md:h-24"
+            />
+          ))}
+        </div>
+      ))}
+    </div>
+  );
+}) as React.FC;
+
+FeaturedItem.Skeleton.displayName = "FeaturedItem.Skeleton";
 
 export default FeaturedItem;
