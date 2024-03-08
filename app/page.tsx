@@ -25,7 +25,7 @@ export default function Home() {
             <FeaturedItem />
           </Suspense>
         </div>
-        <div className="flex gap-2">
+        <div className="flex gap-2 items-center">
           <Link href="mailto:work@nkaewam.dev">
             <Button className="mt-10 p-4 md:p-6 md:text-base md:mt-0">
               Contact Me
@@ -33,7 +33,7 @@ export default function Home() {
           </Link>
           <Link href="https://cv.nkaewam.dev" target="_blank">
             <Button
-              variant="ghost"
+              variant="outline"
               className="mt-10 w-30 p-4 md:p-6 md:text-base md:mt-0"
             >
               CV
