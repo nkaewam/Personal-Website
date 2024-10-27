@@ -17,7 +17,7 @@ const Links = (props: Props) => {
         <LinkedIn className="w-auto h-5" />
       </Link>
       <Link
-        href="https://github.com/tontan2545"
+        href="https://github.com/nkaewam"
         target="_blank"
         rel="noopener noreferrer"
       >

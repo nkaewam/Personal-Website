@@ -17,7 +17,7 @@ export const getGithubFeaturedItems = async () => {
     "https://api.github.com/graphql",
     {
       query: `{
-                      user(login: "tontan2545") {
+                      user(login: "nkaewam") {
                           pinnedItems(first: 6, types: REPOSITORY) {
                               nodes {
                                   ... on Repository {
